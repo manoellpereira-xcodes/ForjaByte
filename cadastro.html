@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ForjaByte | Entrar e cadastrar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+    <div class="topbar">Forjado para performar • Monte seu setup sob medida</div>
+
+    <header>
+        <div class="wrap">
+            <a class="marca" href="index.html" aria-label="ForjaByte, página inicial">
+                <span class="marca-ico" data-mascote="mini"></span>
+                <b>Forja<span>Byte</span></b>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html">Catálogo inicial</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="cadastro.html" class="ativo" aria-current="page">Entrar / Cadastrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+        <div class="pagehero">
+            <div class="wrap">
+                <span class="tag">Área do cliente</span>
+                <h1>Sua conta <span>ForjaByte</span></h1>
+                <p class="slogan">Bem-vindo ao seu próximo setup.</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="wrap">
+
+                <!-- Painel exibido quando a pessoa está conectada -->
+                <div class="painel-user" id="logado" role="status">
+                    <span class="av av-g" id="avatar-logado" aria-hidden="true"></span>
+                    <h2>Olá, <span id="nome-logado"></span>!</h2>
+                    <p id="email-logado"></p>
+                    <p>Você está conectado à demonstração local da ForjaByte.</p>
+
+                    <dl class="dados-user" id="dados-logado"></dl>
+
+                    <div class="acoes-user">
+                        <a class="btn" href="catalogo.html">Ir ao catálogo</a>
+                        <button class="btn out" type="button" id="alterar-foto" aria-expanded="false"
+                            aria-controls="troca-foto">Alterar foto</button>
+                        <button class="btn out" type="button" id="sair">Sair da conta</button>
+                    </div>
+
+                    <div id="troca-foto" hidden>
+                        <div class="msg" id="m-foto" role="status"></div>
+                        <div id="pick-user"></div>
+                        <button class="btn" type="button" id="salvar-foto">Salvar foto</button>
+                    </div>
+                </div>
+
+                <!-- Cadastro e login -->
+                <div class="auth-layout" id="forms">
+
+                    <aside class="auth-marca">
+                        <span class="mascote-auth" data-mascote="grande"
+                            data-rotulo="Mascote da ForjaByte: uma raposa laranja"></span>
+                        <h2>Entre para o <span>time</span></h2>
+                        <p>Crie sua conta demonstrativa e continue montando o seu setup.</p>
+
+                        <ul class="auth-lista">
+                            <li>
+                                <i>✓</i>
+                                <div><b>Montagem sob medida</b><small>Do jeito que você precisa</small></div>
+                            </li>
+                            <li>
+                                <i>✓</i>
+                                <div><b>Garantia e suporte</b><small>Atendimento transparente</small></div>
+                            </li>
+                            <li>
+                                <i>✓</i>
+                                <div><b>Atendimento especializado</b><small>Orientação para seu setup</small></div>
+                            </li>
+                        </ul>
+                    </aside>
+
+                    <div class="auth-caixa">
+                        <div class="abas" role="tablist" aria-label="Acesso à conta">
+                            <button type="button" class="aba" role="tab" id="aba-cad" aria-selected="true"
+                                aria-controls="f-cad">Criar conta</button>
+                            <button type="button" class="aba" role="tab" id="aba-login" aria-selected="false"
+                                aria-controls="f-login" tabindex="-1">Já tenho conta</button>
+                        </div>
+
+                        <form class="form" id="f-cad" role="tabpanel" aria-labelledby="aba-cad" novalidate>
+                            <h2>Criar conta</h2>
+                            <p>Esses dados ajudam no nosso suporte e na entrega do seu pedido.</p>
+                            <div class="msg" id="m-cad" role="alert"></div>
+
+                            <div class="campo">
+                                <span class="rotulo">Foto de perfil</span>
+                                <div id="pick-cad"></div>
+                            </div>
+
+                            <fieldset class="grupo">
+                                <legend>Dados pessoais</legend>
+
+                                <div class="campo">
+                                    <label for="c-nome">Nome completo</label>
+                                    <input type="text" id="c-nome" autocomplete="name" required>
+                                    <div class="erro" id="e-nome"></div>
+                                </div>
+
+                                <div class="linha">
+                                    <div class="campo">
+                                        <label for="c-nasc">Data de nascimento</label>
+                                        <input type="date" id="c-nasc" autocomplete="bday" required>
+                                        <small id="idade-txt">Usamos para calcular sua idade.</small>
+                                        <div class="erro" id="e-nasc"></div>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="c-tel">Telefone / WhatsApp</label>
+                                        <input type="tel" id="c-tel" inputmode="numeric" maxlength="15"
+                                            autocomplete="tel-national" placeholder="(11) 91234-5678" required>
+                                        <small>Para contato do suporte e da entrega.</small>
+                                        <div class="erro" id="e-tel"></div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="grupo">
+                                <legend>Endereço de entrega</legend>
+
+                                <div class="campo">
+                                    <label for="c-cep">CEP</label>
+                                    <input type="text" id="c-cep" inputmode="numeric" maxlength="9"
+                                        autocomplete="postal-code" placeholder="00000-000" required>
+                                    <div class="cep-status" id="cep-status" role="status" aria-live="polite"></div>
+                                    <small>Ao digitar o CEP, preenchemos rua, bairro e cidade.
+                                        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+                                            target="_blank" rel="noopener noreferrer">Não sei meu CEP</a></small>
+                                    <div class="erro" id="e-cep"></div>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="c-rua">Rua / Avenida</label>
+                                    <input type="text" id="c-rua" autocomplete="address-line1" required>
+                                    <div class="erro" id="e-rua"></div>
+                                </div>
+
+                                <div class="linha l-num">
+                                    <div class="campo">
+                                        <label for="c-num">Número</label>
+                                        <input type="text" id="c-num" maxlength="10" autocomplete="off"
+                                            placeholder="Ex.: 120" required>
+                                        <div class="erro" id="e-num"></div>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="c-comp">Complemento <span class="opcional">(opcional)</span></label>
+                                        <input type="text" id="c-comp" maxlength="60" autocomplete="address-line2"
+                                            placeholder="Apto, bloco, referência">
+                                    </div>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="c-bairro">Bairro</label>
+                                    <input type="text" id="c-bairro" autocomplete="address-level3" required>
+                                    <div class="erro" id="e-bairro"></div>
+                                </div>
+
+                                <div class="linha l-uf">
+                                    <div class="campo">
+                                        <label for="c-cidade">Cidade</label>
+                                        <input type="text" id="c-cidade" autocomplete="address-level2" required>
+                                        <div class="erro" id="e-cidade"></div>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="c-uf">UF</label>
+                                        <input type="text" id="c-uf" maxlength="2" autocomplete="address-level1"
+                                            placeholder="SP" required>
+                                        <div class="erro" id="e-uf"></div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="grupo">
+                                <legend>Acesso à conta</legend>
+
+                                <div class="campo">
+                                    <label for="c-email">E-mail</label>
+                                    <input type="email" id="c-email" autocomplete="email" required>
+                                    <div class="erro" id="e-email"></div>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="c-senha">Senha</label>
+                                    <input type="password" id="c-senha" autocomplete="new-password" required>
+                                    <div class="forca" aria-hidden="true"><span id="forca-barra" data-nivel="0"></span></div>
+                                    <small id="forca-txt">Mínimo de 8 caracteres, com letras e números.</small>
+                                    <div class="erro" id="e-senha"></div>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="c-conf">Confirmar senha</label>
+                                    <input type="password" id="c-conf" autocomplete="new-password" required>
+                                    <div class="erro" id="e-conf"></div>
+                                </div>
+
+                                <div class="check">
+                                    <input type="checkbox" id="c-ver">
+                                    <label for="c-ver">Mostrar senhas</label>
+                                </div>
+                            </fieldset>
+
+                            <div class="check">
+                                <input type="checkbox" id="c-termos" required>
+                                <label for="c-termos">Concordo com o uso dos dados nesta demonstração.</label>
+                            </div>
+                            <div class="erro" id="e-termos"></div>
+
+                            <button class="btn" type="submit">Criar conta</button>
+                        </form>
+
+                        <form class="form" id="f-login" role="tabpanel" aria-labelledby="aba-login" novalidate hidden>
+                            <h2>Já tenho conta</h2>
+                            <p>Entre usando o e-mail e a senha cadastrados neste navegador.</p>
+                            <div class="msg" id="m-login" role="alert"></div>
+
+                            <div class="campo">
+                                <label for="l-email">E-mail</label>
+                                <input type="email" id="l-email" autocomplete="email" required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="l-senha">Senha</label>
+                                <input type="password" id="l-senha" autocomplete="current-password" required>
+                            </div>
+
+                            <div class="check">
+                                <input type="checkbox" id="l-ver">
+                                <label for="l-ver">Mostrar senha</label>
+                            </div>
+
+                            <button class="btn" type="submit">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <p class="aviso">
+                    Demonstração escolar: as contas e as fotos de perfil são armazenadas apenas neste navegador.
+                    Não utilize senhas reais ou informações pessoais. Para uso comercial,
+                    é necessário um sistema de autenticação seguro no servidor.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p>Desenvolvido por <strong>[MANOEL LEONARDO BRITO TAVARES PEREIRA]</strong> • [manoel.l.pereira.email@aluno.sp.senai.br]</p>
+            <p>© ForjaByte — Forjado para performar.</p>
+        </div>
+    </footer>
+
+    <script src="mascote.js"></script>
+    <script src="avatares.js"></script>
+    <script src="produtos.js"></script>
+    <script src="cadastro.js"></script>
+    <script src="tema.js"></script>
+    <script src="animacoes.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="acessibilidade.js"></script>
+</body>
+
+</html>

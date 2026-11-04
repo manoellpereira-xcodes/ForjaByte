@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="ForjaByte: ofertas em computadores, peças e periféricos para seu setup.">
+    <title>ForjaByte | Catálogo inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <div class="topbar">Forjado para performar • Monte seu setup sob medida</div>
+
+    <header>
+        <div class="wrap">
+            <a class="marca" href="index.html" aria-label="ForjaByte, página inicial">
+                <span class="marca-ico" data-mascote="mini"></span>
+                <b>Forja<span>Byte</span></b>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html" class="ativo" aria-current="page">Catálogo inicial</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="cadastro.html">Entrar / Cadastrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+
+        <!-- Destaque com contagem regressiva -->
+        <div class="hero hero-home">
+            <div class="wrap">
+                <div>
+                    <span class="tag">Catálogo inicial</span>
+                    <p class="eyebrow">OFERTAS DA SEMANA</p>
+                    <h1>Seu setup <span>em oferta</span></h1>
+                    <p class="slogan">Montado para o seu ritmo.</p>
+
+                    <p class="txt">
+                        Até 20% de desconto em PCs, peças e periféricos selecionados.
+                        As ofertas terminam em:
+                    </p>
+
+                    <div class="contagem" role="timer" aria-label="Tempo restante das ofertas da semana">
+                        <div class="cd-caixa"><b id="cd-d">00</b><small>Dias</small></div>
+                        <div class="cd-caixa"><b id="cd-h">00</b><small>Horas</small></div>
+                        <div class="cd-caixa"><b id="cd-m">00</b><small>Min</small></div>
+                        <div class="cd-caixa"><b id="cd-s">00</b><small>Seg</small></div>
+                    </div>
+
+                    <a class="btn" href="#ofertas">Ver ofertas</a>
+                    <a class="btn out" href="catalogo.html">Catálogo completo</a>
+                </div>
+
+                <div class="palco">
+                    <span data-mascote="grande"
+                        data-rotulo="Mascote da ForjaByte: uma raposa laranja usando headset gamer"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="faixa">
+            <div class="wrap">
+                <div class="fx">
+                    <i>✓</i>
+                    <div><b>Montagem sob medida</b><small>Do jeito que você precisa</small></div>
+                </div>
+                <div class="fx">
+                    <i>✓</i>
+                    <div><b>Garantia e suporte</b><small>Atendimento transparente</small></div>
+                </div>
+                <div class="fx">
+                    <i>✓</i>
+                    <div><b>Atendimento especializado</b><small>Orientação para seu setup</small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ofertas relâmpago -->
+        <section id="ofertas">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Ofertas <span>relâmpago</span></h2>
+                    <p>Os maiores descontos da semana. Corra antes que acabe o tempo.</p>
+                    <div class="barra"></div>
+                </div>
+
+                <div class="carrossel">
+                    <button type="button" class="car-btn car-prev" id="rel-prev" aria-label="Ofertas anteriores">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" /></svg>
+                    </button>
+                    <div class="car-lista" id="rel-lista" tabindex="0" aria-label="Lista de ofertas relâmpago"></div>
+                    <button type="button" class="car-btn car-next" id="rel-next" aria-label="Próximas ofertas">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+
+                <p class="aviso">
+                    Produtos, imagens, preços e descontos são exemplos fictícios para demonstração escolar.
+                    As imagens dependem de conexão com a internet.
+                </p>
+            </div>
+        </section>
+
+        <!-- Oferta do dia -->
+        <section class="alt">
+            <div class="wrap">
+                <div class="destaque" id="dia"></div>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section id="categorias">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Compre por <span>categoria</span></h2>
+                    <p>Equipamentos para diferentes necessidades e estilos.</p>
+                    <div class="barra"></div>
+                </div>
+
+                <div class="grid4">
+                    <a class="cat" href="catalogo.html?cat=PCs%20montados">
+                        <em>01</em>
+                        <h3>PCs montados</h3>
+                        <p>Computadores para jogos, trabalho e criação de conteúdo.</p>
+                    </a>
+                    <a class="cat" href="catalogo.html?cat=Pe%C3%A7as">
+                        <em>02</em>
+                        <h3>Peças</h3>
+                        <p>Componentes para montar ou atualizar seu computador.</p>
+                    </a>
+                    <a class="cat" href="catalogo.html?cat=Perif%C3%A9ricos">
+                        <em>03</em>
+                        <h3>Periféricos</h3>
+                        <p>Teclados, mouses, headsets e monitores.</p>
+                    </a>
+                    <a class="cat" href="catalogo.html?cat=Escrit%C3%B3rio">
+                        <em>04</em>
+                        <h3>Escritório</h3>
+                        <p>Equipamentos para produtividade no dia a dia.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mais vendidos -->
+        <section class="alt">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Mais <span>vendidos</span></h2>
+                    <p>Os favoritos da nossa comunidade.</p>
+                    <div class="barra"></div>
+                </div>
+
+                <div class="chips vend-chips" id="vend-chips" role="group" aria-label="Filtrar mais vendidos por categoria"></div>
+                <div class="grid-prod" id="vend-lista"></div>
+
+                <p class="ver-todos"><a class="btn out" href="catalogo.html">Ver catálogo completo</a></p>
+            </div>
+        </section>
+
+        <!-- Público -->
+        <section>
+            <div class="wrap">
+                <div class="publico">
+                    <div class="pub g">
+                        <h3>Para gamers</h3>
+                        <p>Monte um setup que acompanhe suas partidas e seus desafios.</p>
+                        <a class="btn out" href="catalogo.html?cat=PCs%20montados">Ver equipamentos</a>
+                    </div>
+                    <div class="pub">
+                        <h3>Para trabalho e estudo</h3>
+                        <p>Encontre equipamentos para produtividade e tarefas diárias.</p>
+                        <a class="btn" href="catalogo.html?cat=Escrit%C3%B3rio">Explorar produtos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p>Desenvolvido por <strong>[MANOEL LEONARDO BRITO TAVARES PEREIRA]</strong> • [manoel.l.pereira.email@aluno.sp.senai.br]</p>
+            <p>© ForjaByte — Forjado para performar.</p>
+        </div>
+    </footer>
+
+    <script src="mascote.js"></script>
+    <script src="avatars.js"></script>
+    <script src="produtos.js"></script>
+    <script src="ofertas.js"></script>
+    <script src="tema.js"></script>
+    <script src="animacoes.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="acessibilidade.js"></script>
+</body>
+
+</html>

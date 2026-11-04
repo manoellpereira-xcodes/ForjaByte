@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ForjaByte | Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+    <div class="topbar">Forjado para performar • Monte seu setup sob medida</div>
+
+    <header>
+        <div class="wrap">
+            <a class="marca" href="index.html" aria-label="ForjaByte, página inicial">
+                <span class="marca-ico" data-mascote="mini"></span>
+                <b>Forja<span>Byte</span></b>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="index.html">Catálogo inicial</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="catalogo.html" class="ativo" aria-current="page">Catálogo</a>
+                <a href="cadastro.html">Entrar / Cadastrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+        <div class="pagehero">
+            <div class="wrap">
+                <span class="tag">Loja ForjaByte</span>
+                <h1>Encontre seu próximo <span>setup</span></h1>
+                <p class="slogan">Tecnologia para ir além.</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="loja">
+
+                    <!-- Coluna lateral: filtros e mini carrinho -->
+                    <aside class="lateral" aria-label="Filtros do catálogo">
+                        <div class="lateral-bloco">
+                            <h2 class="lateral-titulo">Categorias</h2>
+                            <div class="chips" id="chips" role="group" aria-label="Filtrar categoria"></div>
+                        </div>
+
+                        <div class="lateral-bloco">
+                            <h2 class="lateral-titulo"><label for="preco-max">Preço máximo</label></h2>
+                            <select id="preco-max" class="filtro-select">
+                                <option value="999999">Qualquer preço</option>
+                                <option value="300">Até R$ 300</option>
+                                <option value="1000">Até R$ 1.000</option>
+                                <option value="2500">Até R$ 2.500</option>
+                                <option value="5000">Até R$ 5.000</option>
+                                <option value="10000">Até R$ 10.000</option>
+                            </select>
+                        </div>
+
+                        <div class="lateral-bloco mini-carrinho" id="mini-carrinho">
+                            <h2 class="lateral-titulo">Seu carrinho</h2>
+                            <div class="mini-linha"><span>Itens</span><strong id="mini-qtd">0</strong></div>
+                            <div class="mini-linha"><span>Total</span><strong id="mini-total">R$ 0,00</strong></div>
+                            <a class="btn" href="#carrinho-sec">Ver carrinho</a>
+                        </div>
+
+                        <button type="button" class="limpar-filtros" id="limpar-filtros">Limpar filtros</button>
+                    </aside>
+
+                    <!-- Vitrine de produtos -->
+                    <div class="vitrine">
+                        <div class="barra-topo">
+                            <label class="busca">
+                                <span class="sr">Buscar produto</span>
+                                <input id="busca" type="search" placeholder="Buscar produto...">
+                            </label>
+
+                            <label>
+                                <span class="sr">Ordenar produtos</span>
+                                <select id="ordenar" class="filtro-select">
+                                    <option value="padrao">Ordem padrão</option>
+                                    <option value="menor">Menor preço</option>
+                                    <option value="maior">Maior preço</option>
+                                    <option value="nome">Nome A–Z</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <p class="resultado" id="resultado" aria-live="polite"></p>
+                        <div class="produtos" id="lista"></div>
+
+                        <p class="aviso">
+                            Produtos, imagens, preços, descontos, parcelas e especificações são exemplos fictícios
+                            para demonstração escolar. As imagens dependem de conexão com a internet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt" id="carrinho-sec">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Seu <span>carrinho</span></h2>
+                    <div class="barra"></div>
+                </div>
+                <div class="carrinho">
+                    <div class="msg" id="m-cart" role="status"></div>
+                    <div id="cart-conteudo"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p>Desenvolvido por <strong>[MANOEL LEONARDO BRITO TAVARES PEREIRA]</strong> • [manoel.l.pereira.email@aluno.sp.senai.br]</p>
+            <p>© ForjaByte — Forjado para performar.</p>
+        </div>
+    </footer>
+
+    <script src="mascote.js"></script>
+    <script src="avatars.js"></script>
+    <script src="produtos.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="tema.js"></script>
+    <script src="animacoes.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="acessibilidade.js"></script>
+</body>
+
+</html>
