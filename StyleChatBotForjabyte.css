@@ -1,0 +1,340 @@
+/* ==========================================================
+   NexByte | Chat da ForjaByte
+   Reaproveita .loja, .lateral, .chip e .btn do style.css
+   (mesmo layout do catálogo). Carregue DEPOIS do style.css.
+   ========================================================== */
+
+.fb-sec {
+  padding: 48px 0 72px;
+}
+
+/* ---------- Coluna lateral ---------- */
+
+.fb-campo {
+  width: 100%;
+  background: var(--input);
+  color: var(--tx);
+  border: 1px solid var(--line2);
+  border-radius: 3px;
+  padding: 10px 12px;
+  font-size: .95rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.fb-campo::placeholder {
+  color: var(--mut);
+}
+
+.fb-campo:focus {
+  outline: none;
+  border-color: var(--or);
+  box-shadow: 0 0 0 3px rgba(255, 106, 0, .2);
+}
+
+.fb-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: .88rem;
+  color: var(--mut);
+}
+
+.fb-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--or);
+}
+
+.fb-nota {
+  margin-top: 10px;
+  font-size: .82rem;
+  line-height: 1.45;
+  color: var(--mut);
+}
+
+.fb-nota[data-ok="true"] {
+  color: var(--or-text);
+}
+
+/* Perguntas rápidas: texto corrido, sem caixa alta */
+.fb-rapidas .chip {
+  justify-content: flex-start;
+  font-family: var(--fonte-texto);
+  font-weight: 500;
+  font-size: .88rem;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.35;
+  padding: 9px 12px;
+}
+
+/* ---------- Painel da conversa ---------- */
+
+.fb-chat {
+  display: flex;
+  flex-direction: column;
+  height: min(680px, calc(100vh - 150px));
+  min-height: 520px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  animation: subir .6s cubic-bezier(.2, .7, .2, 1) backwards;
+}
+
+.fb-chat__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--line);
+}
+
+.fb-chat__ico {
+  flex: none;
+  width: 42px;
+  height: 42px;
+}
+
+.fb-chat__ico .fox {
+  height: 100%;
+}
+
+.fb-chat__title {
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.fb-chat__subtitle {
+  margin-top: 2px;
+  color: var(--mut);
+  font-size: .85rem;
+  line-height: 1.3;
+}
+
+.fb-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  color: var(--mut);
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
+.fb-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line2);
+}
+
+.fb-status[data-on="true"]::before {
+  background: #3ddc84;
+}
+
+/* ---------- Mensagens ---------- */
+
+.fb-chat__messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 20px;
+  overflow-y: auto;
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+.fb-msg {
+  display: flex;
+  gap: 10px;
+  max-width: 86%;
+  animation: surgir .3s ease;
+}
+
+.fb-msg--bot,
+.fb-msg--error {
+  align-self: flex-start;
+}
+
+.fb-msg--user {
+  align-self: flex-end;
+}
+
+.fb-av {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  padding: 3px;
+  background: var(--surface2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.fb-av .fox {
+  width: 100%;
+  height: 100%;
+}
+
+.fb-bub {
+  min-width: 0;
+  padding: 10px 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-radius: 3px;
+}
+
+/* NexByte: mesma linguagem dos cartões do site (borda laranja à esquerda) */
+.fb-msg--bot .fb-bub {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--or);
+}
+
+.fb-msg--user .fb-bub {
+  background: var(--surface2);
+  border: 1px solid var(--line2);
+  border-right: 3px solid var(--or);
+}
+
+.fb-msg--error .fb-bub {
+  background: transparent;
+  border: 1px solid #ff4d4d;
+  border-left-width: 3px;
+  color: #ff7b7b;
+  font-size: .92rem;
+}
+
+html[data-theme="light"] .fb-msg--error .fb-bub {
+  color: #c62828;
+}
+
+/* Indicador de digitação */
+.fb-dots {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  height: 1.55em;
+}
+
+.fb-dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--or);
+  animation: fb-pulsa 1.1s ease-in-out infinite;
+}
+
+.fb-dots i:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.fb-dots i:nth-child(3) {
+  animation-delay: .3s;
+}
+
+@keyframes fb-pulsa {
+
+  0%,
+  80%,
+  100% {
+    opacity: .25;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* ---------- Envio ---------- */
+
+.fb-chat__input {
+  display: flex;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--surface2);
+  border-top: 1px solid var(--line);
+}
+
+.fb-chat__input .fb-campo {
+  flex: 1;
+  padding: 11px 13px;
+  font-size: 1rem;
+}
+
+.fb-chat__input .btn {
+  flex: none;
+  padding: 10px 24px;
+}
+
+.fb-chat__input .btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.fb-chat :focus-visible,
+.lateral :focus-visible {
+  outline: 2px solid var(--or);
+  outline-offset: 2px;
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 860px) {
+  .fb-chat {
+    height: calc(100vh - 120px);
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fb-sec {
+    padding: 24px 0 48px;
+  }
+
+  .fb-chat__header,
+  .fb-chat__messages,
+  .fb-chat__input {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .fb-status {
+    display: none;
+  }
+
+  .fb-msg {
+    max-width: 96%;
+  }
+
+  .fb-msg--user .fb-av,
+  .fb-msg--bot .fb-av {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fb-chat,
+  .fb-msg,
+  .fb-dots i {
+    animation: none;
+  }
+
+  .fb-chat__messages {
+    scroll-behavior: auto;
+  }
+}
+
+body.sem-anim .fb-dots i {
+  animation: none;
+  opacity: .7;
+}

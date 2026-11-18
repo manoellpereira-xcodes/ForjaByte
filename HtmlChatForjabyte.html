@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>ForjaByte | Chat NexByte</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="StyleChatBotForjabyte.css">
+</head>
+
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+  <div class="topbar">Forjado para performar • Monte seu setup sob medida</div>
+
+  <header>
+    <div class="wrap">
+      <a class="marca" href="index.html" aria-label="ForjaByte, página inicial">
+        <span class="marca-ico" data-mascote="mini"></span>
+        <b>Forja<span>Byte</span></b>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Catálogo inicial</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="HtmlChatForjabyte.html" class="ativo" aria-current="page">Chat</a>
+        <a href="cadastro.html">Entrar / Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="pagehero">
+      <div class="wrap">
+        <span class="tag">Assistente virtual</span>
+        <h1>Fale com o <span>NexByte</span></h1>
+        <p class="slogan">Tire suas dúvidas sobre PCs e periféricos.</p>
+      </div>
+    </div>
+
+    <section class="fb-sec">
+      <div class="wrap">
+        <div class="loja">
+
+          <!-- Coluna lateral: chave, perguntas rápidas e limpar -->
+          <aside class="lateral" aria-label="Configurações do chat">
+            <div class="lateral-bloco">
+              <h2 class="lateral-titulo"><label for="apiKey">Chave de API</label></h2>
+              <input id="apiKey" class="fb-campo" type="password" placeholder="sk-..." autocomplete="off"
+                spellcheck="false">
+              <div class="fb-check">
+                <input type="checkbox" id="showKey">
+                <label for="showKey">Mostrar chave</label>
+              </div>
+              <p class="fb-nota" id="keyStatus" role="status">Cole sua chave da OpenAI para começar.</p>
+            </div>
+
+            <div class="lateral-bloco">
+              <h2 class="lateral-titulo">Perguntas rápidas</h2>
+              <div class="chips fb-rapidas" role="group" aria-label="Perguntas rápidas">
+                <button type="button" class="chip" data-q="Qual PC montado é bom para jogar em Full HD?">PC para jogar
+                  em Full HD</button>
+                <button type="button" class="chip" data-q="O que preciso para montar um PC de escritório?">Montar PC de
+                  escritório</button>
+                <button type="button" class="chip" data-q="Qual a diferença entre SSD NVMe e SSD SATA?">SSD NVMe ou
+                  SATA</button>
+                <button type="button" class="chip" data-q="Quanta memória RAM eu preciso?">Quanta RAM eu
+                  preciso</button>
+              </div>
+            </div>
+
+            <button type="button" class="limpar-filtros" id="clearBtn">Limpar conversa</button>
+          </aside>
+
+          <!-- Conversa -->
+          <div class="fb-chat" role="region" aria-label="Conversa com o NexByte">
+            <div class="fb-chat__header">
+              <span class="fb-chat__ico" data-mascote="mini"></span>
+              <div>
+                <h2 class="fb-chat__title">Nex<span>Byte</span></h2>
+                <p class="fb-chat__subtitle">Assistente de informática da ForjaByte</p>
+              </div>
+              <span class="fb-status" id="chatStatus" data-on="false">Sem chave</span>
+            </div>
+
+            <div id="messages" class="fb-chat__messages" role="log" aria-live="polite" aria-label="Mensagens"></div>
+
+            <form class="fb-chat__input" id="chatForm">
+              <label class="sr" for="userMessage">Mensagem para o NexByte</label>
+              <input id="userMessage" class="fb-campo" type="text"
+                placeholder="Pergunte sobre PCs, peças ou periféricos" autocomplete="off">
+              <button id="sendBtn" class="btn" type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+
+        <p class="aviso">
+          Demonstração escolar: a chave de API fica apenas na memória desta página e não é salva.
+          Não compartilhe sua chave com outras pessoas.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Desenvolvido por <strong>[MANOEL LEONARDO BRITO TAVARES PEREIRA]</strong> •
+        [manoel.l.pereira.email@aluno.sp.senai.br]</p>
+      <p>© ForjaByte — Forjado para performar.</p>
+    </div>
+  </footer>
+
+  <script src="mascote.js"></script>
+  <script src="avatares.js"></script>
+  <script src="tema.js"></script>
+  <script src="animacoes.js"></script>
+  <script src="acessibilidade.js"></script>
+  <script src="ScriptChatForjabyte.js"></script>
+</body>
+
+</html>
